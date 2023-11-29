@@ -32,7 +32,6 @@ function getRandomChar() {
 const oneEm = parseFloat(getComputedStyle(document.body).fontSize);
 const margin = oneEm;
 const footer = document.querySelector('footer');
-const footerRect = footer.getBoundingClientRect();
 const container = document.body;
 const slidemodes = ["fixed", "page"];
 const slidemode = slidemodes[0];
@@ -135,8 +134,8 @@ function removeColumnsPastLimits() {
     for (let i = 0; i < columnsArray.length; i++) {
         let slidedistance = Number(columnsArray[i].getAttribute('slidedistance'));
         let top = Number(columnsArray[i].style.top.replace('px', ''));
-        let right = Number(columnsArray[i].style.right.replace('px', ''));
-        let columnHeight = columnsArray[i].getAttribute('columnLength') * 19;
+        let right = Number(columnsArray[i].style.left.replace('px', '')) + oneEm;
+        let columnHeight = columnsArray[i].getAttribute('columnLength') * (oneEm + 2);
 
         if (slidedistance + top + columnHeight > maxtop || right > window.innerWidth) {
             remove_indices.add(i);
@@ -188,7 +187,6 @@ window.addEventListener('orientationchange', function() {
     updateParams();
     removeColumnsPastLimits();
 });
-
 
 const matrixButton = document.getElementById('matrixButton');
 const matrixMenu = document.getElementById('matrixMenu');
@@ -305,6 +303,10 @@ function setMenuWidth() {
     var navUl = document.querySelector('nav ul');
     var buttonPadding = oneEm;
     navUl.style.width = (nameWidth + buttonWidth - buttonPadding) + 'px';
+
+    // Taking advantage of the event to update the animation when resizing
+    updateParams();
+    removeColumnsPastLimits();
 }
 
 
