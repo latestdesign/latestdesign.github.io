@@ -1,46 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- TODO
+    easy stuff:
+    - record and add 3 minute pitch video through youtube
+    - fill out experience section with the template
+    - make an english resume and upload it through pdf
+    - fill out current and past projects with illustrations or github links through the template
+    - add interests and hobbies as a bonus at the end (book list, cinema favs.)
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Louka</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <nav class="top-nav">
-            <div class="container">
-                <h1>Paul Louka</h1>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+    <header class="header">
+        <nav id="nav">
+            <a class="menu-name" href="#top">Paul Louka</a>
+            <button class="menu-btn" id="menuButton" target="_blank"><i class="fas fa-bars"></i></button>
+            <ul id="menu">
+                <li><a class="menu-item" href=#about>About</a></li>
+                <li><a class="menu-item" href=#experience>Experience</a></li>
+                <li><a class="menu-item" href=#projects>Projects</a></li>
+            </ul>
+            <a class="button" id="matrixButton" target="_blank">Matrix Mode</a> <!-- TODO: add link to matrix -->
+                <div id="matrixMenu" style="display: none;">
+                    <label for="minSpeed">Speed minimum (px/s)</label>
+                    <input type="number" id="minSpeed" value="30" step="10">
+                    <label for="maxSpeed">Speed maximum (px/s)</label>
+                    <input type="number" id="maxSpeed" value="400" step="10">
+                    <label for="columnDelay">Time interval (ms)</label>
+                    <input type="number" id="columnDelay" value="20", step="1">
+                    <label for="opacityFactor">Opacity</label>
+                    <input type="number" id="opacityFactor" value="1" step="0.05">
+                    <button id="resetButton">Reset values</button>
+                </div>
         </nav>
     </header>
 
-    <!--Main home page content with photo on the side-->
-
-    <section id="home" class="home">
-        <div class="main-container">
+    <div class="center-container">
+        <div id="top">
             <div class="intro">
-                <h1>I'm Paul Louka, welcome to my ePortfolio.</h1>
-                <p>
-                    Currently studying computer science and engineering at ENSEEIHT, Toulouse, France.
-                </p>
+                <h1>I'm Paul Louka, welcome to my ePortfolio</h1>
+                <h3>Computer science and engineering student</h3>
+                <p>ENSEEIHT, Toulouse, France</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/paul-louka/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/paul.lka" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/latestdesign" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:paul.louka@etu.toulouse-inp.fr" target="_blank"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
             <div class="profile-picture">
-                <img class=bw-profile src="images/photoid-min.jpg" alt="A picture of myself.">
+                <img class=bw-profile src="images/photoid-min.jpg" alt="profile picture">
             </div>
         </div>
+    </div>
 
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Paul Louka</p>
+    <div class="center-container">
+        <div id="about", class="section">
+            <h2>About</h2>
+            <p>I've always been passionate about the incredible potential of computers and technology. In the past few years, I've acquired experience in the once again booming field of AI and machine learning, which now constitutes one of my main focuses.</p>
+            <p>I'm deeply interested in the field of computer science, as well as the underlying mathematics and physics that power modern algorithms and thought processes. Hence I'm currently pursuing a computer science and engineering degree at <a href="https://www.enseeiht.fr/", target="_blank">ENSEEIHT</a>, Toulouse, France.</p>
+            <p>I'm open to any opportunity to learn, and I'm looking for an internship in related fields for the summer of 2024.</p>
+            <p>My hobbies include composing music, reading litterature, martial arts and cinema.</p>
         </div>
+        <div class="video-button">
+            <button id="videoButton" class="button" target="_blank">Video presentation</button>
+        </div>
+        <div class="video-container">
+            <iframe width=auto height=auto src="https://www.youtube.com/embed/svutJYy9zK0?list=PLCbeGEuFFLxqURbpW5Wf29TRyNfgRT7kd" title="[FREE] Lucki x 6 Dogs Type Beat &quot;Like a Dream&quot; (prod. sourkidd) 2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="center-container">
+        <div id="experience", class="section">
+            <h2>Experience</h2>
+            <table>
+                <tr>
+                    <td>2022 - 2024</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.
+                        <div class="exp-tags">
+                            <span>Tag1</span>
+                            <span>Tag2</span>
+                            <span>Tag3</span>
+                            <span>Tag4</span>
+                            <span>Tag5</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2020 - 2023</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.
+                        <div class="exp-tags">
+                            <span>Tag1</span>
+                            <span>Tag2</span>
+                            <span>Tag3</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td >2018 - 2019</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.
+                        <div class="exp-tags">
+                            <span>Tag1</span>
+                            <span>Tag2</span>
+                            <span>Tag3</span>
+                            <span>Tag4</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <a href="https://www.google.com/" class="button" target="_blank">Download full resume<i class="fas fa-download" style="margin-left: 5px;"></i></a>
+    </div>
+
+    <div class="center-container" style="margin-bottom: -40px;">
+        <div id="projects", class="section">
+            <h2>Projects</h2>
+            <table>
+                <tr>
+                    <td>
+                        <h3 class="project-title">Project 1</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
+                            nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc 
+                            nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam 
+                            nunc, quis aliquet nunc nisl eget nunc.
+                        </p> 
+                        <div class="exp-tags">
+                            <span>Tag1</span>
+                            <span>Tag2</span>
+                            <span>Tag3</span>
+                        </div>
+                    </td>
+                    <td id="projectImage">
+                        <img class="project-image" src="images/degré_16_0_1.png" alt="project image">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="projectImage">
+                        <img class="project-image" src="images/photoid-min.jpg" alt="project image">
+                    </td>
+                    <td>
+                        <h3 class="project-title">Project 2</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
+                            nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc 
+                            nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam 
+                            nunc, quis aliquet nunc nisl eget nunc.
+                        </p> 
+                        <div class="exp-tags">
+                            <span>Tag1</span>
+                            <span>Tag2</span>
+                            <span>Tag3</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="project-title">Project 3</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
+                            nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc 
+                            nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam 
+                            nunc, quis aliquet nunc nisl eget nunc.
+                        </p> 
+                        <div class="exp-tags">
+                            <span>Tag1</span>
+                            <span>Tag2</span>
+                        </div>
+                    </td>
+                    <td id="projectImage">
+                        <img class="project-image" src="images/degré_16_0_1.png" alt="project image">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="more-buton">
+            <button class="button" id="moreButton" target="_blank">More about me</button>
+        </div>
+    </div>
+
+    <div class="end-container" style="margin-bottom: 20px;">
+        <div id="interests", class="section">
+            <h2>Interests</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Paul Louka</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.6.0/tinycolor.min.js" integrity="sha512-AvCfbOQzCVi2ctVWF4m89jLwTn/zVPJuS7rhiKyY3zqyCdbPqtvNa0I628GJqPytbowfFjkAGOpq85E5kQc40Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
 </body>
 </html>
