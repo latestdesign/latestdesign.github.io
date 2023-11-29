@@ -181,11 +181,6 @@ document.getElementById('moreButton').addEventListener('click', function() {
     removeColumnsPastLimits();
 });
 
-// Actualize everything for portable devices when switching from portrait to landscape or vice versa
-window.addEventListener('orientationchange', function() {
-    updateParams();
-    removeColumnsPastLimits();
-});
 
 const matrixButton = document.getElementById('matrixButton');
 const matrixMenu = document.getElementById('matrixMenu');
@@ -307,7 +302,9 @@ function updateLayout() {
 }
 window.addEventListener('DOMContentLoaded', setMenuWidth);
 window.addEventListener('resize', updateLayout);
-window.addEventListener('orientationchange', updateLayout);
+window.addEventListener('orientationchange', function() {
+    setTimeout(updateLayout, 200); // wait for the orientation change to be effective
+});
 
 
 // href corrections
