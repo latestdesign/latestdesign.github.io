@@ -141,7 +141,6 @@ function removeColumnsPastLimits() {
             remove_indices.add(i);
         }
     }
-
     remove_indices.forEach(i => {
         clearTimeout(Number(columnsArray[i].getAttribute('timeoutId')));
         columnsArray[i].remove();
@@ -294,20 +293,21 @@ menu.addEventListener('mouseleave', () => {
 });
 
 // Automatic sizing
-window.addEventListener('resize', setMenuWidth);
-window.addEventListener('DOMContentLoaded', setMenuWidth);
-
 function setMenuWidth() {
     var nameWidth = document.querySelector('.menu-name').offsetWidth;
     var buttonWidth = document.querySelector('.menu-btn').offsetWidth;
     var navUl = document.querySelector('nav ul');
     var buttonPadding = oneEm;
     navUl.style.width = (nameWidth + buttonWidth - buttonPadding) + 'px';
-
-    // Taking advantage of the event to update the animation when resizing
+}
+function updateLayout() {
     updateParams();
     removeColumnsPastLimits();
+    setMenuWidth();
 }
+window.addEventListener('DOMContentLoaded', setMenuWidth);
+window.addEventListener('resize', updateLayout);
+window.addEventListener('orientationchange', updateLayout);
 
 
 // href corrections
