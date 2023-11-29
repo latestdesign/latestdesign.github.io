@@ -266,6 +266,7 @@ body {
 .intro {
     flex: 1;
     line-height: 0.9;
+    margin-right: 20px;
 }
 
 h1 {
