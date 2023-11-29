@@ -21,7 +21,7 @@
 
 /* General styles */
 html {
-    font-size: 16px;
+    font-size: medium;
     font-feature-settings: "ss03", "cv02", "cv11";
     background: var(--background-color);
     color: var(--text-color);
@@ -140,6 +140,8 @@ body {
     align-items: center;
     margin: 0 auto;
     width: 100%;
+    font-size: small;
+    color: var(--paragraph-color);
 }
 
 .menu-item {
@@ -150,7 +152,7 @@ body {
 }
 
 .menu-name {
-    font-size: 24px;
+    font-size: x-large;
     font-weight: bold;
     color: inherit;
     font-family: inherit;
@@ -174,7 +176,7 @@ body {
     border: none;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: medium;
     display: none;
     transition: background 0.3s;
 
@@ -245,13 +247,13 @@ body {
 }
 
 .center-container h3 {
-    font-size: 18px;
+    font-size: large;
     font-weight: bold;
     font-family: inherit;
 }
 
 .center-container h2 {
-    font-size: 19px;
+    font-size: large;
     font-family: inherit;
     text-transform: uppercase;
 }
@@ -265,20 +267,16 @@ body {
 
 .intro {
     flex: 1;
-    line-height: 0.9;
     margin-right: 20px;
+}
+.intro h1 {
+    line-height: 1;
 }
 
 h1 {
-    font-size: 45px;
+    font-size: xxx-large;
     font-weight: bold;
     color: inherit;
-    font-family: inherit;
-}
-
-p {
-    font-size: 16px;
-    color: var(--paragraph-color);
     font-family: inherit;
 }
 
@@ -295,7 +293,7 @@ p {
 .social-icons a {
     color: inherit;
     text-decoration: none;
-    font-size: 21px;
+    font-size: x-large;
 }
 
 .profile-picture {
@@ -354,7 +352,7 @@ p {
     background-color: #196BCA;
     color: var(--text-color);
     font-family: inherit;
-    font-size: 16px;
+    font-size: medium;
     font-weight: bold;
     text-decoration: none;
     padding: 10px 9px;
@@ -388,7 +386,7 @@ p {
     line-height: 1;
     text-decoration: none;
     color: #3cd1d0;
-    font-size: 14px;
+    font-size: 85%;
     border-radius: 18px;
     padding: 10px 10px;
     margin-right: 8px;
