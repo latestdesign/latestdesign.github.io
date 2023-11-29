@@ -29,16 +29,14 @@ html {
 }
 
 body {
-    z-index: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
-    width: 80vw;
+    align-items: center;
     margin: auto;
-    max-width: 700px;
-    height: 100%;
+    max-width: 40em;
+    padding: 0 3em;
     overflow: auto;
 }
 
@@ -52,10 +50,10 @@ body {
     width: 100%;
     background: var(--background-color);
     color: inherit;
-    padding: 15px 0;
+    padding: 1em 0;
     font-family: inherit;
     z-index: 10;
-    box-shadow: 0px 0px 12px rgba(0,0,0,0.75);
+    box-shadow: 0 0 1em rgba(0,0,0,0.75);
 
     nav {
         display: flex;
@@ -76,7 +74,7 @@ body {
 
 #matrixButton {
     position: absolute;
-    right: 20px;
+    right: 1em;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -89,34 +87,35 @@ body {
 #matrixMenu {
     display: none;
     position: absolute;
-    right: 20px;
+    right: 1em;
     justify-content: center;
     align-items: center;
     top: 100%;
     background: linear-gradient(to right,#196BCA ,#6433E0);
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 0.5em;
+    padding: 0.8em 0.8em 0.6em 0.8em; 
     flex-direction: column;
 }
 
 #matrixMenu label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.2em;
     box-sizing: border-box;
     font-weight: bold;
 }
 
 #matrixMenu input {
-    margin-bottom: 10px;
+    margin-bottom: 0.4em;
     box-sizing: border-box;
     background: var(--text-color);
 }
 
 #resetButton {
-    padding: 10px 9px;
-    border: 0px solid #000;
+    padding: 0.6em 0.8em;
+    margin-top: 0.4em;
+    border: 0 solid #000;
     font-weight: bold;
-    border-radius: 18px;
+    border-radius: 1em;
     display: block;
     justify-content: center;
     align-items: center;
@@ -145,7 +144,8 @@ body {
 }
 
 .menu-item {
-    margin: 0 10px;
+    margin: 0;
+    padding-right: 1em;
     color: inherit;
     text-decoration: none;
     font-family: inherit;
@@ -157,12 +157,15 @@ body {
     color: inherit;
     font-family: inherit;
     text-decoration: none;
-    padding-right: 15px; /* Name to menu buttons padding */
-    padding-left: 20px;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin: 0;
 }
 
 .menu-item:hover {
     color: var(--paragraph-color);
+    user-select: none;
+    cursor: pointer;
 }
 
 .menu-name:active {
@@ -179,12 +182,13 @@ body {
     font-size: medium;
     display: none;
     transition: background 0.3s;
+    padding-right: 1em;
 
 } .menu-btn:hover {
     color: var(--paragraph-color);
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 34em) {
     /* Show menu button next to name instead of menu items */
     .menu-btn {
         display: inline-block;
@@ -216,16 +220,16 @@ body {
     nav.active ul {
         visibility: visible;
         pointer-events: initial;
-        transition-delay: 0.2s;
     }
 
     nav.active ul li {
-        padding: 10px 0;
+        padding: 0.6em 0;
         text-align: center;
     } 
     nav.active ul li:hover {
         background: var(--text-color);
         color: var(--background-color);
+        user-select: none;
     }
     .menu-item:hover {
         color: inherit;
@@ -234,7 +238,7 @@ body {
 
 /* Main container styles */
 .center-container {
-    padding-bottom: 60px;
+    padding-bottom: 4em;
 }
 
 .center-container a {
@@ -262,12 +266,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 4em;
 }
 
 .intro {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 1em;
 }
 .intro h1 {
     line-height: 1;
@@ -283,7 +287,7 @@ h1 {
 .social-icons {
     display: flex;
     justify-content: left;
-    gap: 16px;
+    gap: 1em;
 }
 
 .social-icons a:hover {
@@ -299,13 +303,13 @@ h1 {
 .profile-picture {
     width: 25vw;
     height: 25vw;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 16em;
+    max-height: 16em;
     border-radius: 50%;
     overflow: hidden;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 28em) {
     .profile-picture {
         display: none;
     }
@@ -320,12 +324,10 @@ h1 {
 
 .video-container {
     display: none;
-    width: 75%;
-    height: auto;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    width: 100%;
     position: relative;
-    margin: auto;
-    margin-top: 40px;
+    padding-top: 56.25%;
+    margin-top: 2em;
 }
 
 .video-container iframe {
@@ -343,7 +345,7 @@ h1 {
 }
 
 #videoButton {
-    margin-top: 40px;
+    margin-top: 2em;
 }
 
 .button, a.button {
@@ -355,9 +357,9 @@ h1 {
     font-size: medium;
     font-weight: bold;
     text-decoration: none;
-    padding: 10px 9px;
-    border: 0px solid #000;
-    border-radius: 18px;
+    padding: 0.6em 0.8em;
+    border: 0 solid #000;
+    border-radius: 1em;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -387,24 +389,28 @@ h1 {
     text-decoration: none;
     color: #3cd1d0;
     font-size: 85%;
-    border-radius: 18px;
-    padding: 10px 10px;
-    margin-right: 8px;
+    border-radius: 1em;
+    padding: 0.6em;
+    margin-right: 0.5em;
     background-color: #122b39;
-    margin-top: 8px;
     pointer-events: none;
     user-select: none;
 }
 
+#experience .exp-tags span {
+    margin-top: 1em;
+}
+
+/* For the download button */
 #experience {
-    padding-bottom: 40px;
+    padding-bottom: 2.5em;
 }
 
 #experience table, #projects table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    margin-top: 20px;
+    margin-top: 1em;
 
     border-top: none;
     border-bottom: none;
@@ -412,7 +418,7 @@ h1 {
 }
 
 #experience table td {
-    padding: 10px 0;
+    padding: 0.6em 0;
     font-family: inherit;
     vertical-align: top;
 }
@@ -426,11 +432,11 @@ h1 {
     flex-direction: row;
     font-family: inherit;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 0.6em;
 }
 
 #projects table td {
-    padding: 10px 10px;
+    padding: 0.6em 0.6em;
     font-family: inherit;
     top: 0;
     width: 100%;
@@ -438,7 +444,7 @@ h1 {
 
 .project-image {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0.6em;
     overflow: hidden;
 }
 
@@ -464,7 +470,7 @@ h1 {
     margin: 0;
     position: relative;
     z-index: 1;
-    margin-top: 40px;
+    margin-top: 2em;
 }
 
 /* for fun */

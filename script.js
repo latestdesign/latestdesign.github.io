@@ -29,7 +29,8 @@ function getRandomChar() {
 
 
 // Initializing the animation
-const margin = 15;
+const oneEm = parseFloat(getComputedStyle(document.body).fontSize);
+const margin = oneEm;
 const footer = document.querySelector('footer');
 const footerRect = footer.getBoundingClientRect();
 const container = document.body;
@@ -295,19 +296,19 @@ function setMenuWidth() {
     var nameWidth = document.querySelector('.menu-name').offsetWidth;
     var buttonWidth = document.querySelector('.menu-btn').offsetWidth;
     var navUl = document.querySelector('nav ul');
-    var buttonPadding = 15;
+    var buttonPadding = oneEm;
     navUl.style.width = (nameWidth + buttonWidth - buttonPadding) + 'px';
 }
 
 
 // href corrections
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('li[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
         const menuBarHeight = document.querySelector('.header').offsetHeight;
         const target = document.querySelector(this.getAttribute('href'));
-        const targetPosition = target.offsetTop - menuBarHeight - 15;
+        const targetPosition = target.offsetTop - menuBarHeight - oneEm;
 
         window.scrollTo({
             top: targetPosition,
