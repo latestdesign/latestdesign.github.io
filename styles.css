@@ -407,9 +407,8 @@ h1 {
     margin-top: 1em;
 }
 
-/* For the download button */
-#experience {
-    padding-bottom: 2.5em;
+.cv-button {
+    margin-top: 2em;
 }
 
 #experience table, #projects table {
@@ -438,14 +437,24 @@ h1 {
     flex-direction: row;
     font-family: inherit;
     align-items: center;
-    padding-bottom: 0.6em;
+    padding-bottom: 1em;
 }
 
 #projects table td {
-    padding: 0.6em 0.6em;
     font-family: inherit;
     top: 0;
     width: 100%;
+}
+
+#projects table tr td:first-child {
+    padding-right: 0.5em;
+}
+#projects table tr td:last-child {
+    padding-left: 0.5em;
+}
+
+#lastContainer.center-container {
+    padding-bottom: 1.5em;
 }
 
 .project-image {
