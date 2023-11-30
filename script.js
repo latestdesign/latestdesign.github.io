@@ -37,8 +37,8 @@ const slidemodes = ["fixed", "page"];
 const slidemode = slidemodes[0];
 let minSpeed = 30;
 let maxSpeed = 300;
-let columnDelay = 80;
-let opacityFactor = 1.25;
+let columnDelay = 20;
+let opacityFactor = 1;
 
 let lastCallTime = 0;
 let maxslidedistance = 0;
@@ -198,7 +198,7 @@ document.getElementById('matrixButton').addEventListener('click', () => {
 
 
 let timeoutId;
-let displaydelay = 200;
+let displaydelay = 100;
 matrixButton.addEventListener('mouseover', () => {
     clearTimeout(timeoutId);
     matrixMenu.style.display = 'block';
@@ -238,8 +238,8 @@ document.addEventListener('input', () => {
 function resetInputs() {
     variables.minSpeed = 30;
     variables.maxSpeed = 300;
-    variables.columnDelay = 80;
-    variables.opacityFactor = 1.25;
+    variables.columnDelay = 20;
+    variables.opacityFactor = 1;
     inputs.forEach(input => {
         input.value = variables[input.id];
     });
@@ -295,19 +295,18 @@ function setMenuWidth() {
     var buttonPadding = oneEm;
     navUl.style.width = (nameWidth + buttonWidth - buttonPadding) + 'px';
 }
-
 function updateLayout() {
     updateParams();
     removeColumnsPastLimits();
     setMenuWidth();
 }
-
 window.addEventListener('DOMContentLoaded', setMenuWidth);
-// the following checks for resize but also orientation change
-window.addEventListener('resize', function() {
-    setTimeout(updateLayout, 200); // wait for the resize to be effective
-});
-
+window.addEventListener('resize', updateLayout);
+if (window.screen && window.screen.orientation) {
+    window.screen.orientation.addEventListener('change', function() {
+        setTimeout(updateLayout, 200); // wait for the orientation change to be effective
+    });
+};
 
 // href corrections
 document.querySelectorAll('li[href^="#"]').forEach(anchor => {
