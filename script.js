@@ -37,8 +37,8 @@ const slidemodes = ["fixed", "page"];
 const slidemode = slidemodes[0];
 let minSpeed = 30;
 let maxSpeed = 300;
-let columnDelay = 20;
-let opacityFactor = 1;
+let columnDelay = 80;
+let opacityFactor = 1.25;
 
 let lastCallTime = 0;
 let maxslidedistance = 0;
