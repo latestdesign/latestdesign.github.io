@@ -54,22 +54,22 @@ body {
     font-family: inherit;
     z-index: 10;
     box-shadow: 0 0 1em rgba(0,0,0,0.75);
+}
 
-    nav {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        z-index: 10;
-        width: 100%;
-    }
+#nav {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+}
 
-    nav ul {
-        display: flex;
-        justify-content: flex-start;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+#nav ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #matrixButton {
@@ -241,23 +241,6 @@ body {
     }
 }
 
-@media screen and (min-width: 34em) {
-    nav {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        z-index: 10;
-        width: 100%;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: flex-start;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-}
 
 /* Main container styles */
 .center-container {
