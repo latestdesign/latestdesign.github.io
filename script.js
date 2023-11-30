@@ -158,7 +158,15 @@ function updateParams() {
 };
 
 
-// Event listeners
+// EVENT LISTENERS
+let timeoutId;
+let menuTimeoutId;
+let displaydelay = 100;
+var menuBtn = document.querySelector('.menu-btn');
+var menuName = document.querySelector('.menu-name');
+var menu = document.querySelector('ul');
+var nav = document.querySelector('nav');
+
 document.getElementById('videoButton').addEventListener('click', function() {
     var videoContainer = document.querySelector('.video-container');
     if (videoContainer.style.display === 'none' || videoContainer.style.display === '') {
@@ -181,7 +189,7 @@ document.getElementById('moreButton').addEventListener('click', function() {
     removeColumnsPastLimits();
 });
 
-
+// Matrix button
 const matrixButton = document.getElementById('matrixButton');
 const matrixMenu = document.getElementById('matrixMenu');
 
@@ -196,28 +204,65 @@ document.getElementById('matrixButton').addEventListener('click', () => {
     }
 });
 
+// All hovering effects
+var isPhoneOrTablet = window.matchMedia("(pointer: coarse)").matches;
 
-let timeoutId;
-let displaydelay = 100;
-matrixButton.addEventListener('mouseover', () => {
-    clearTimeout(timeoutId);
-    matrixMenu.style.display = 'block';
-});
-matrixButton.addEventListener('mouseleave', () => {
-    timeoutId = setTimeout(() => {
-        matrixMenu.style.display = 'none';
-    }, displaydelay);
-});
-matrixMenu.addEventListener('mouseover', () => {
-    clearTimeout(timeoutId);
-    matrixMenu.style.display = 'block';
-});
-matrixMenu.addEventListener('mouseleave', () => {
-    timeoutId = setTimeout(() => {
-        matrixMenu.style.display = 'none';
-    }, displaydelay);
-});
+if (isPhoneOrTablet) {
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+} else {
+    // Matrix menu display
+    matrixButton.addEventListener('mouseover', () => {
+        clearTimeout(timeoutId);
+        matrixMenu.style.display = 'block';
+    });
+    matrixButton.addEventListener('mouseleave', () => {
+        timeoutId = setTimeout(() => {
+            matrixMenu.style.display = 'none';
+        }, displaydelay);
+    });
+    matrixMenu.addEventListener('mouseover', () => {
+        clearTimeout(timeoutId);
+        matrixMenu.style.display = 'block';
+    });
+    matrixMenu.addEventListener('mouseleave', () => {
+        timeoutId = setTimeout(() => {
+            matrixMenu.style.display = 'none';
+        }, displaydelay);
+    });
 
+    // Menu display
+    menuName.addEventListener('mouseover', () => {
+        clearTimeout(menuTimeoutId);
+    });
+    menuName.addEventListener('mouseleave', () => {
+        menuTimeoutId = setTimeout(() => {
+            nav.classList.remove('active');
+        }, displaydelay);
+    });
+
+    menuBtn.addEventListener('mouseover', () => {
+        clearTimeout(menuTimeoutId);
+        nav.classList.add('active');
+    });
+    menuBtn.addEventListener('mouseleave', () => {
+        menuTimeoutId = setTimeout(() => {
+            nav.classList.remove('active');
+        }, displaydelay);
+    });
+    menu.addEventListener('mouseover', () => {
+        clearTimeout(menuTimeoutId);
+        nav.classList.add('active');
+    });
+    menu.addEventListener('mouseleave', () => {
+        menuTimeoutId = setTimeout(() => {
+            nav.classList.remove('active');
+        }, displaydelay);
+    });
+};
+
+// Matrix menu inputs
 const inputs = document.querySelectorAll('#matrixMenu input');
 let variables = {};
 inputs.forEach(input => {
@@ -249,43 +294,6 @@ resetInputs();
 const resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', resetInputs);
 
-
-// Menu button
-var menuBtn = document.querySelector('.menu-btn');
-var menu = document.querySelector('ul');
-var nav = document.querySelector('nav');
-var menuName = document.querySelector('.menu-name');
-
-menuName.addEventListener('mouseover', () => {
-    clearTimeout(menuTimeoutId);
-});
-menuName.addEventListener('mouseleave', () => {
-    menuTimeoutId = setTimeout(() => {
-        nav.classList.remove('active');
-    }, displaydelay);
-});
-
-/* Exactly the same as with the matrix button */
-let menuTimeoutId;
-
-menuBtn.addEventListener('mouseover', () => {
-    clearTimeout(menuTimeoutId);
-    nav.classList.add('active');
-});
-menuBtn.addEventListener('mouseleave', () => {
-    menuTimeoutId = setTimeout(() => {
-        nav.classList.remove('active');
-    }, displaydelay);
-});
-menu.addEventListener('mouseover', () => {
-    clearTimeout(menuTimeoutId);
-    nav.classList.add('active');
-});
-menu.addEventListener('mouseleave', () => {
-    menuTimeoutId = setTimeout(() => {
-        nav.classList.remove('active');
-    }, displaydelay);
-});
 
 // Automatic sizing
 function setMenuWidth() {
