@@ -306,11 +306,12 @@ if (window.screen && window.screen.orientation) {
     window.screen.orientation.addEventListener('change', function() {
         setTimeout(updateLayout, 200); // wait for the orientation change to be effective
     });
-};
-// Fallback for browsers that don't support screen.orientation
-window.addEventListener('resize', function() {
-    setTimeout(updateLayout, 200); // wait for the resize to be effective
-});
+} else {
+    // Fallback for browsers that don't support screen.orientation
+    window.addEventListener('resize', function() {
+        setTimeout(updateLayout, 200); // wait for the resize to be effective
+    });
+}
 
 
 // href corrections
