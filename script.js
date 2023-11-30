@@ -122,7 +122,7 @@ function generateColumn() {
     now = Date.now();
     setTimeout(() => requestAnimationFrame(generateColumn), columnDelay - (now - lastCallTime));
 }
-
+requestAnimationFrame(generateColumn);
 
 // Actualize the columns when the page changes after a button click
 function removeColumnsPastLimits() {
