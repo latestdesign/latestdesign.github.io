@@ -53,7 +53,7 @@ let maxcolumnLength = Math.floor(maxslidedistance / 19);
 
 
 // Main animation loop
-let isAnimationActive = false;
+let isAnimationActive = true;
 
 const matrixContainer = document.createElement('div');
 matrixContainer.style.position = 'absolute';
@@ -302,12 +302,12 @@ function updateLayout() {
 }
 if (window.screen && window.screen.orientation) {
     window.screen.orientation.addEventListener('change', function() {
-        setTimeout(updateLayout, 300); // wait for the orientation change to be effective
+        requestAnimationFrame(updateLayout); // wait for the orientation change to be effective
     });
 };
 // Fallback for browsers that don't support screen.orientation
 window.addEventListener('resize', function() {
-    setTimeout(updateLayout, 300); // wait for the resize to be effective
+    requestAnimationFrame(updateLayout); // wait for the resize to be effective
 });
 
 

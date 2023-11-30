@@ -35,7 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
-    max-width: 40em;
+    max-width: 50em;
     padding: 0 2em;
     overflow: auto;
 }
@@ -447,10 +447,10 @@ h1 {
 }
 
 #projects table tr td:first-child {
-    padding-right: 0.5em;
+    padding-right: 1em;
 }
 #projects table tr td:last-child {
-    padding-left: 0.5em;
+    padding-left: 1em;
 }
 
 #lastContainer.center-container {
