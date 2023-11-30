@@ -238,8 +238,8 @@ document.addEventListener('input', () => {
 function resetInputs() {
     variables.minSpeed = 30;
     variables.maxSpeed = 300;
-    variables.columnDelay = 20;
-    variables.opacityFactor = 1;
+    variables.columnDelay = 80;
+    variables.opacityFactor = 1.25;
     inputs.forEach(input => {
         input.value = variables[input.id];
     });
