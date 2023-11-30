@@ -295,15 +295,21 @@ function setMenuWidth() {
     var buttonPadding = oneEm;
     navUl.style.width = (nameWidth + buttonWidth - buttonPadding) + 'px';
 }
+
 function updateLayout() {
     updateParams();
     removeColumnsPastLimits();
     setMenuWidth();
 }
+
 window.addEventListener('DOMContentLoaded', setMenuWidth);
-window.addEventListener('resize', updateLayout);
-window.addEventListener('orientationchange', function() {
-    setTimeout(updateLayout, 200); // wait for the orientation change to be effective
+if (window.screen && window.screen.orientation) {
+    window.screen.orientation.addEventListener('change', function() {
+        setTimeout(updateLayout, 200); // wait for the orientation change to be effective
+    });
+};
+window.addEventListener('resize', function() {
+    setTimeout(updateLayout, 200); // wait for the resize to be effective
 });
 
 
