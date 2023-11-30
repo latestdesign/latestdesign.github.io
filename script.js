@@ -307,6 +307,11 @@ if (window.screen && window.screen.orientation) {
         setTimeout(updateLayout, 200); // wait for the orientation change to be effective
     });
 };
+// Fallback for browsers that don't support screen.orientation
+window.addEventListener('resize', function() {
+    setTimeout(updateLayout, 200); // wait for the resize to be effective
+});
+
 
 // href corrections
 document.querySelectorAll('li[href^="#"]').forEach(anchor => {
