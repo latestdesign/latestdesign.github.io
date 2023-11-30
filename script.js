@@ -37,7 +37,7 @@ const slidemodes = ["fixed", "page"];
 const slidemode = slidemodes[0];
 let minSpeed = 30;
 let maxSpeed = 300;
-let columnDelay = 80;
+let columnDelay = 80; // minimum is for 60fps, so 16.67ms, else we get frame drops
 let opacityFactor = 1.25;
 
 let lastCallTime = 0;
@@ -275,6 +275,7 @@ document.addEventListener('input', () => {
     minSpeed = Number(variables.minSpeed);
     maxSpeed = Number(variables.maxSpeed);
     columnDelay = Number(variables.columnDelay);
+    columnDelay = Math.max(columnDelay, 16.67); // minimum is for 60fps, so 16.67ms, else we get frame drops
     opacityFactor = Number(variables.opacityFactor);
     updateParams();
     removeColumnsPastLimits();
@@ -302,12 +303,16 @@ function updateLayout() {
 }
 if (window.screen && window.screen.orientation) {
     window.screen.orientation.addEventListener('change', function() {
-        requestAnimationFrame(updateLayout); // wait for the orientation change to be effective
+        setTimeout(function() {
+            requestAnimationFrame(updateLayout); // wait for the orientation change to be effective
+        }, displaydelay);
     });
 };
 // Fallback for browsers that don't support screen.orientation
 window.addEventListener('resize', function() {
-    requestAnimationFrame(updateLayout); // wait for the resize to be effective
+    setTimeout(function() {
+        requestAnimationFrame(updateLayout); // wait for the resize to be effective
+    }, displaydelay);
 });
 
 
