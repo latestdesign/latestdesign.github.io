@@ -196,11 +196,11 @@ const matrixMenu = document.getElementById('matrixMenu');
 document.getElementById('matrixButton').addEventListener('click', () => {
     isAnimationActive = !isAnimationActive;
     if (isAnimationActive) {
-        matrixButton.classList.add('matrixButtonActive');
+        matrixButton.classList.add('active');
         requestAnimationFrame(generateColumn);
     }
     else {
-        matrixButton.classList.remove('matrixButtonActive');
+        matrixButton.classList.remove('active');
     }
 });
 

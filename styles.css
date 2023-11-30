@@ -79,7 +79,7 @@ body {
     transform: translateY(-50%);
 }
 
-#matrixButton.matrixButtonActive {
+#matrixButton.active {
     background: var(--text-color);
     color: var(--background-color);
 }
