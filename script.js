@@ -37,8 +37,8 @@ const slidemodes = ["fixed", "page"];
 const slidemode = slidemodes[0];
 let minSpeed = 30;
 let maxSpeed = 300;
-let columnDelay = 20;
-let opacityFactor = 1;
+let columnDelay = 80;
+let opacityFactor = 1.25;
 
 let lastCallTime = 0;
 let maxslidedistance = 0;
@@ -238,8 +238,8 @@ document.addEventListener('input', () => {
 function resetInputs() {
     variables.minSpeed = 30;
     variables.maxSpeed = 300;
-    variables.columnDelay = 20;
-    variables.opacityFactor = 1;
+    variables.columnDelay = 80;
+    variables.opacityFactor = 1.25;
     inputs.forEach(input => {
         input.value = variables[input.id];
     });
