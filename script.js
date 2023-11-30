@@ -303,13 +303,9 @@ function updateLayout() {
 }
 
 window.addEventListener('DOMContentLoaded', setMenuWidth);
-if (window.screen && window.screen.orientation) {
-    window.screen.orientation.addEventListener('change', function() {
-        setTimeout(updateLayout, 200); // wait for the orientation change to be effective
-    });
-};
+// the following checks for resize but also orientation change
 window.addEventListener('resize', function() {
-    setTimeout(updateLayout, 200); // wait for the resize to be effective
+    setTimeout(updateLayout, 100); // wait for the resize to be effective
 });
 
 
