@@ -37,7 +37,7 @@ const slidemodes = ["fixed", "page"];
 const slidemode = slidemodes[0];
 let minSpeed = 30;
 let maxSpeed = 300;
-let columnDelay = 80; // minimum is for 60fps, so 16.67ms, else we get frame drops
+let columnDelay = 80; // minimum is for 60fps, so 17ms, else we get frame drops
 let opacityFactor = 1.25;
 
 let lastCallTime = 0;
@@ -275,7 +275,10 @@ document.addEventListener('input', () => {
     minSpeed = Number(variables.minSpeed);
     maxSpeed = Number(variables.maxSpeed);
     columnDelay = Number(variables.columnDelay);
-    columnDelay = Math.max(columnDelay, 16.67); // minimum is for 60fps, so 16.67ms, else we get frame drops
+    columnDelay = Math.max(columnDelay, 17); // minimum is for 60fps, so 17ms, else we get frame drops
+    let inputcolumnDelay = document.querySelector('#columnDelay');
+    inputcolumnDelay.value = columnDelay;
+    
     opacityFactor = Number(variables.opacityFactor);
     updateParams();
     removeColumnsPastLimits();
