@@ -428,8 +428,18 @@ h1 {
     vertical-align: top;
 }
 
+#experience table tr td h3, #experience table tr td h4 {
+    margin: 0 0 0.5em 0;
+}
+
+#experience table tr td h4 {
+    font-weight: normal;
+    color: var(--paragraph-color);
+}
+
 #experience table tr td:first-child {
     width: 30%;
+    padding-right: 1em;
 }
 
 #projects table tr {
