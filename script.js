@@ -295,21 +295,11 @@ const resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', resetInputs);
 
 
-// Automatic sizing
-function setMenuWidth() {
-    var nameWidth = document.querySelector('.menu-name').offsetWidth;
-    var buttonWidth = document.querySelector('.menu-btn').offsetWidth;
-    var navUl = document.querySelector('nav ul');
-    var buttonPadding = oneEm;
-    navUl.style.width = (nameWidth + buttonWidth - buttonPadding) + 'px';
-}
+// Automatic resizing
 function updateLayout() {
     updateParams();
     removeColumnsPastLimits();
-    setMenuWidth();
 }
-window.addEventListener('DOMContentLoaded', setMenuWidth);
-window.addEventListener('resize', updateLayout);
 if (window.screen && window.screen.orientation) {
     window.screen.orientation.addEventListener('change', function() {
         setTimeout(updateLayout, 300); // wait for the orientation change to be effective
