@@ -198,7 +198,7 @@ document.getElementById('matrixButton').addEventListener('click', () => {
 
 
 let timeoutId;
-let displaydelay = 100;
+let displaydelay = 200;
 matrixButton.addEventListener('mouseover', () => {
     clearTimeout(timeoutId);
     matrixMenu.style.display = 'block';
@@ -305,7 +305,7 @@ function updateLayout() {
 window.addEventListener('DOMContentLoaded', setMenuWidth);
 // the following checks for resize but also orientation change
 window.addEventListener('resize', function() {
-    setTimeout(updateLayout, 100); // wait for the resize to be effective
+    setTimeout(updateLayout, 200); // wait for the resize to be effective
 });
 
 
