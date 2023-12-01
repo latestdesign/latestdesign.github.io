@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- TODO
-    easy stuff:
-    - record and add 3 minute pitch video through youtube
-    - fill out experience section with the template
-    - make an english resume and upload it through pdf
-    - fill out current and past projects with illustrations or github links through the template
-    - add interests and hobbies as a bonus at the end (book list, cinema favs.)
--->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +30,7 @@
                 <label for="columnDelay">Time interval (ms)</label>
                 <input type="number" id="columnDelay" value="80", step="1">
                 <label for="opacityFactor">Opacity</label>
-                <input type="number" id="opacityFactor" value="1.25" step="0.05">
+                <input type="number" id="opacityFactor" value="1.0" step="0.05">
                 <button id="resetButton">Reset values</button>
             </div>
         </nav>
@@ -150,17 +141,18 @@
             <table>
                 <tr>
                     <td>
-                        <h3 class="project-title"></h3>
+                        <h3 class="project-title">Basic face detection algorithm</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
-                            nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc 
-                            nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam 
-                            nunc, quis aliquet nunc nisl eget nunc.
+                            Created a facial detection algorithm &ndash; which returns bounding boxes &ndash; from scratch using convolutional neural networks and standard machine learning techniques.
+                            Learned to effectively use the Tensorflow and OpenCV libraries, as well as the CUDA GPU acceleration. I recreated another image detection algorithm using PyTorch and 
+                            the YOLOv7 architecture, coupled with Kaggle GPU acceleration.
                         </p> 
                         <div class="exp-tags">
-                            <span>Tag1</span>
-                            <span>Tag2</span>
-                            <span>Tag3</span>
+                            <span>Tensorflow</span>
+                            <span>OpenCV</span>
+                            <span>Pytorch</span>
+                            <span>Kaggle</span>
+                            <span>CUDA</span>
                         </div>
                     </td>
                     <td id="projectImage">
@@ -172,36 +164,50 @@
                         <img class="project-image" src="images/degré_16_0_1.png" alt="project image">
                     </td>
                     <td>
-                        <h3 class="project-title">Project 2</h3>
+                        <h3 class="project-title">Soccer match prediction algorithm</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
-                            nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc 
-                            nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam 
-                            nunc, quis aliquet nunc nisl eget nunc.
+                            Created a soccer match prediction algorithm from scratch. The 20000+ match dataset was built by regularly scraping the web for soccer match data and odds, and getting the results afterwards.
+                            Data was processed using the pandas Python module, and put through a Tensorflow pipeline. Final model was created using bayesian optimization of hyperparameters. Global performance led to a statistical betting edge,
+                            at least on the dataset (further testing needed to check for overfitting).
                         </p> 
                         <div class="exp-tags">
-                            <span>Tag1</span>
-                            <span>Tag2</span>
-                            <span>Tag3</span>
+                            <span>Tensorflow</span>
+                            <span>Bayesian optimization</span>
+                            <span>Pandas</span>
+                            <span>JSON</span>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3 class="project-title">Project 3</h3>
+                        <h3 class="project-title">Newton Fractals</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, 
-                            nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc 
-                            nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam 
-                            nunc, quis aliquet nunc nisl eget nunc.
+                            Used the Newton-Raphson method to create fractals from polynomial functions. The algorithm was implemented in Python through numpy and matplotlib.
                         </p> 
                         <div class="exp-tags">
-                            <span>Tag1</span>
-                            <span>Tag2</span>
+                            <span>Applied mathematics</span>
+                            <span>Python</span>
+                            <span>Numpy</span>
                         </div>
                     </td>
                     <td id="projectImage">
                         <img class="project-image" src="images/degré_16_0_1.png" alt="project image">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="projectImage">
+                        <img class="project-image" src="images/degré_16_0_1.png" alt="project image">
+                    </td>
+                    <td>
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p>
+                            This very website was created from scratch using HTML, CSS and JavaScript. It was designed to be responsive and mobile-friendly.
+                        </p> 
+                        <div class="exp-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -214,9 +220,18 @@
     <div class="center-container" id="lastContainer">
         <div id="interests", class="section">
             <h2>Interests</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc. Donec euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, quis aliquet nunc nisl eget nunc.</p>
+            <p>
+                I like to create my own projects, and I've found computers to be especially effective to help my to do so.
+                This isn't limited to algorithms! I've been composing music on DAWs for a few years now.
+                That being said, one of the things I enjoy most is other people's creations, which as led me to appreciate good litterature, cinema and music.
+            </p>
+            <p>
+                As I learned quickly through my various projects, having a strong theoretical background helps tremendously in reaching more complex objectives.
+                My passion for science and mathematics comes in handy in this regard, and I'm always looking to learn more about these fields.
+            </p>
+            <p>
+                I'm also a big fan of martial arts, which help me to stay in shape and to keep a clear mind. I've been practicing boxing, and I am getting into Brazilian Jiu-Jitsu.
+            </p>
         </div>
     </div>
 
@@ -227,4 +242,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.6.0/tinycolor.min.js" integrity="sha512-AvCfbOQzCVi2ctVWF4m89jLwTn/zVPJuS7rhiKyY3zqyCdbPqtvNa0I628GJqPytbowfFjkAGOpq85E5kQc40Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
