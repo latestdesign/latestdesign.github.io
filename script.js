@@ -289,6 +289,10 @@ function resetInputs() {
     variables.maxSpeed = 300;
     variables.columnDelay = 80;
     variables.opacityFactor = 1;
+    minSpeed = variables.minSpeed;
+    maxSpeed = variables.maxSpeed;
+    columnDelay = variables.columnDelay;
+    opacityFactor = variables.opacityFactor;
     inputs.forEach(input => {
         input.value = variables[input.id];
     });
