@@ -93,7 +93,7 @@ body {
     top: 100%;
     background: linear-gradient(to right,#196BCA ,#6433E0);
     border-radius: 0.5em;
-    padding: 0.8em 0.8em 0.6em 0.8em; 
+    padding: 0.8em 0.8em 0.6em 0.8em;
     flex-direction: column;
 }
 
@@ -206,7 +206,7 @@ body {
         flex: 1;
         z-index: 100;
     }
-    
+
     nav ul {
         visibility: hidden;
         pointer-events: none;
@@ -218,10 +218,10 @@ body {
         list-style: none;
         width: 12em;
         background: var(--background-color);
-        padding: 0;  
-        margin: 0; 
+        padding: 0;
+        margin: 0;
     }
-    
+
     nav.active ul {
         visibility: visible;
         pointer-events: initial;
@@ -230,7 +230,7 @@ body {
     nav.active ul li {
         padding: 0.6em 0;
         text-align: center;
-    } 
+    }
     nav.active ul li:hover {
         background: var(--text-color);
         color: var(--background-color);
@@ -406,6 +406,10 @@ h1 {
 
 .cv-button {
     margin-top: 2em;
+}
+
+.cv-button a {
+    margin: 0 0.2em;
 }
 
 #experience table, #projects table {
