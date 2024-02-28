@@ -167,16 +167,16 @@ var menuName = document.querySelector('.menu-name');
 var menu = document.querySelector('ul');
 var nav = document.querySelector('nav');
 
-document.getElementById('videoButton').addEventListener('click', function() {
-    var videoContainer = document.querySelector('.video-container');
-    if (videoContainer.style.display === 'none' || videoContainer.style.display === '') {
-        videoContainer.style.display = 'block';
-    } else {
-        videoContainer.style.display = 'none';
-    }
-    updateParams();
-    removeColumnsPastLimits();
-});
+// document.getElementById('videoButton').addEventListener('click', function() {
+//     var videoContainer = document.querySelector('.video-container');
+//     if (videoContainer.style.display === 'none' || videoContainer.style.display === '') {
+//         videoContainer.style.display = 'block';
+//     } else {
+//         videoContainer.style.display = 'none';
+//     }
+//     updateParams();
+//     removeColumnsPastLimits();
+// });
 
 document.getElementById('moreButton').addEventListener('click', function() {
     var interests = document.querySelector('#interests');
@@ -201,6 +201,13 @@ document.getElementById('matrixButton').addEventListener('click', () => {
     }
     else {
         matrixButton.classList.remove('active');
+        // Remove all columns
+        const columns = matrixContainer.getElementsByTagName('div');
+        let columnsArray = Array.from(columns);
+        columnsArray.forEach(column => {
+            clearTimeout(Number(column.getAttribute('timeoutId')));
+            column.remove();
+        });
     }
 });
 
