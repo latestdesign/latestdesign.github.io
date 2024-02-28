@@ -53,7 +53,7 @@ let maxcolumnLength = Math.floor(maxslidedistance / 19);
 
 
 // Main animation loop
-let isAnimationActive = true;
+let isAnimationActive = false;
 
 const matrixContainer = document.createElement('div');
 matrixContainer.style.position = 'absolute';
@@ -78,7 +78,7 @@ function generateColumn() {
     lastCallTime = now;
 
     const columnLength = Math.min(Math.floor(Math.random() * 60) + 10, maxcolumnLength);
-    const left = Math.random() * (window.innerWidth - 2 * margin) + margin;    
+    const left = Math.random() * (window.innerWidth - 2 * margin) + margin;
     const color = getRandomColor();
     const opacity = (Math.random()*0.7 + 0.05) * opacityFactor;
     const delay = Math.random() * 0.5;
@@ -278,7 +278,7 @@ document.addEventListener('input', () => {
     columnDelay = Math.max(columnDelay, 17); // minimum is for 60fps, so 17ms, else we get frame drops
     let inputcolumnDelay = document.querySelector('#columnDelay');
     inputcolumnDelay.value = columnDelay;
-    
+
     opacityFactor = Number(variables.opacityFactor);
     updateParams();
     removeColumnsPastLimits();
