@@ -409,7 +409,7 @@ h1 {
 }
 
 .cv-button a {
-    margin: 0 0.2em;
+    margin: 0 0.5em 0.5em 0;
 }
 
 #experience table, #projects table {
